@@ -9,7 +9,7 @@
 #pragma resource "*.dfm"
 TForm1 *Form1;
 
-int x=-2, y=-2;
+int x=-4, y=-4;
 
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
@@ -31,10 +31,14 @@ void __fastcall TForm1::ballTimerTimer(TObject *Sender)
         {
                 ballTimer->Enabled = false;
         }
-        //else if ((ball->Top - ball->Height/2 < pl->Top) && (ball->Top - ball->Height/2 > pl->Top - pl->Height) && (ball->Left + ball->Width/2 < pl->Left))
-        //{
-        //        if(x<0) x = -x;
-        //}
+        else if ((ball->Top + ball->Height/2 > pl->Top) && (ball->Top + ball->Height/2 < pl->Top + pl->Height) && (ball->Left < pl->Left + pl->Width))
+        {
+                if(x<0) x = -x;
+        }
+        else if ((ball->Top + ball->Height/2 > de->Top) && (ball->Top + ball->Height/2 < de->Top + de->Height) && (ball->Left + ball->Width > de->Left))
+        {
+                if (x>0) x = -x;
+        }
 }
 //---------------------------------------------------------------------------
 
