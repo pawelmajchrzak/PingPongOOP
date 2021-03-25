@@ -10,11 +10,11 @@
 #include <ExtCtrls.hpp>
 #include <Graphics.hpp>
 #include <jpeg.hpp>
+#include <ComCtrls.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
 __published:	// IDE-managed Components
-        TImage *bg;
         TImage *pl;
         TImage *de;
         TImage *ball;
@@ -23,6 +23,12 @@ __published:	// IDE-managed Components
         TTimer *plDown;
         TTimer *deUp;
         TTimer *deDown;
+        TButton *Button1;
+        TImage *bg;
+        TLabel *Label1;
+        TLabel *Label2;
+        TLabel *Label3;
+        TButton *Button2;
         void __fastcall ballTimerTimer(TObject *Sender);
         void __fastcall plUpTimer(TObject *Sender);
         void __fastcall plDownTimer(TObject *Sender);
@@ -32,6 +38,9 @@ __published:	// IDE-managed Components
           TShiftState Shift);
         void __fastcall deUpTimer(TObject *Sender);
         void __fastcall deDownTimer(TObject *Sender);
+        void __fastcall Button1Click(TObject *Sender);
+        void __fastcall Button2Click(TObject *Sender);
+        void __fastcall FormCreate(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm1(TComponent* Owner);
